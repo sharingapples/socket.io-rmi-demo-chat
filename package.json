@@ -1,0 +1,34 @@
+{
+  "name": "socket.io-rmi-demo-chat",
+  "version": "0.0.0",
+  "description": "A demo chat application for socket.io-rmi",
+  "main": "index.js",
+  "files": [
+    "src",
+    "static"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ranjan Shrestha",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.6",
+    "socket.io-rmi-client": "^1.0.4",
+    "socket.io-rmi-server": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "socket.io-client": "^1.4.6",
+    "socket.io-rmi-client": "file:///Users/ranjanshrestha/Workspace/Libraries/socket.io-rmi-client",
+    "webpack": "^1.13.1"
+  }
+}
