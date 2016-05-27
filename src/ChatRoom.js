@@ -44,9 +44,7 @@ class ChatRoom {
 
   sendEvent(user, event) {
     Object.keys(this.users).forEach(key => {
-      console.log('sendEvent', key, user.id);
       if (key != user.id) {
-        console.log('Sending Event to ', event, user.id, user.name);
         this.users[key].eventHandler.onEvent(user, event);
       }
     });
