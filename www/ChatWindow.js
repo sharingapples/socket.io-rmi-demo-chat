@@ -85,6 +85,7 @@ class ChatWindow extends React.Component {
       });
       this.appendLog('status', user, 'joined');
     } else if (event === 'leave') {
+      console.log('User', user.id, user.name, ' left');
       delete this.state.typers[user.id];
       delete this.state.users[user.id];
       this.setState({
@@ -98,12 +99,14 @@ class ChatWindow extends React.Component {
 
   onJoin(room, name) {
     this.state.rmi.login(room, name, this.eventHandler).then(users => {
+      const usersObject = {};
+      users.forEach(user => usersObject[user.id] = user);
       this.setState({
         room: room,
         name: name,
-        users: users,
+        users: usersObject,
       });
-      console.log(`${users.length} users in ${room}`);
+      console.log(`${users.length} users in ${room}`, users);
     });
   }
 
