@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import { findDOMNode } from 'react-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -33,6 +34,14 @@ class LoginForm extends React.Component {
     this.setState({});
   }
 
+  componentDidUpdate() {
+    const elem = findDOMNode(this.refs.name);
+    if (elem) {
+      elem.focus();
+    }
+
+  }
+
   render() {
     const { rmi } = this.props;
     const { room, name } = this.state;
@@ -43,7 +52,7 @@ class LoginForm extends React.Component {
         <input type="text" placeholder="Room" value={room}
           onChange={this.updateState.bind(this, 'room')}
           onKeyPress={this.trySubmit}/>
-        <input type="text" placeholder="Name" value={name}
+        <input ref="name" type="text" placeholder="Name" value={name}
           onChange={this.updateState.bind(this, 'name')}
           onKeyPress={this.trySubmit}/>
         <button onClick={this.onJoin} disabled={disabled}>Join</button>
