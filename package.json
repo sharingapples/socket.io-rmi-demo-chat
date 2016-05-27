@@ -1,6 +1,6 @@
 {
   "name": "socket.io-rmi-demo-chat",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A demo chat application for socket.io-rmi",
   "main": "index.js",
   "files": [
