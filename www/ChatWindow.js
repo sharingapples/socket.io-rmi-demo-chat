@@ -58,12 +58,15 @@ class ChatWindow extends React.Component {
 
   componentDidUpdate() {
     // Scroll the window to view
-    const elem = findDOMNode(this.refs.logs);
+    let elem = findDOMNode(this.refs.logs);
     if (elem) {
       elem.scrollTop = elem.scrollHeight - elem.offsetHeight;
-      //console.log(elem.scrollHeight);
     }
-    //findDOMNode(this.refs.logs).scrollTo(0, )
+
+    elem = findDOMNode(this.refs.msg);
+    if (elem) {
+      elem.focus();
+    }
   }
 
   onEvent(user, event) {
@@ -203,7 +206,7 @@ class ChatWindow extends React.Component {
           </div>
           {this._renderTypers(typersArray)}
           <div className="input-bar">
-            <input type="text" placeholder="Type your message..."
+            <input ref="msg" type="text" placeholder="Type your message..."
                   onChange={this.onChange}
                   onKeyPress={this.onKeyPress} value={message} />
             <button onClick={this.onSend}>Send</button>
