@@ -34,7 +34,7 @@ class LoginForm extends React.Component {
     this.setState({});
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     const elem = findDOMNode(this.refs.name);
     if (elem) {
       elem.focus();
