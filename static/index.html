@@ -1,1 +1,122 @@
-../www/index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Demo using socket.io-rmi</title>
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: #ccc;
+      }
+      body, input, button {
+        font-family: Verdana;
+        font-size: 20px;
+      }
+      #content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 400px;
+        height: 100%;
+        background: #eee;
+        margin: 0 auto;
+      }
+
+      .chat-window {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .title-bar {
+        flex: 0;
+        padding: 10px;
+        background: #aaa;
+      }
+
+      .logs {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow-y: scroll;
+      }
+
+      .messages {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .log-msg {
+        margin-bottom: 2px;
+      }
+
+      .log-status {
+        padding: 5px 8px;
+        margin: 5px 2px;
+        font-size: 12px;
+        background: #ccc;
+        text-align: center;
+
+      }
+
+      .log-msg .user {
+        display: inline-block;
+        padding: 3px 8px;
+        background: #aaa;
+      }
+
+      .log-msg .data {
+        display: inline-block;
+        padding: 3px;
+      }
+
+      .log-status .user {
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .typer-status {
+        flex: 0;
+        padding: 5px;
+        font-size: 14px;
+        text-align: center;
+        color: #aaa;
+      }
+
+
+      .input-bar {
+        flex: 0;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .input-bar input {
+        flex: 1;
+        text-align: left;
+      }
+
+
+      .login-form {
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      input {
+        padding: 10px;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
