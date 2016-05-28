@@ -48,11 +48,17 @@ class ChatWindow extends React.Component {
   }
 
   appendLog(type, user, data) {
-    this.state.logs.push({
+    const logs = this.state.logs;
+    logs.push({
       type, user, data,
     });
+
+    // Keep the limit at 200 logs
+    if (logs.length > 200)
+      logs.shift();
+
     this.setState({
-      logs: this.state.logs,
+      logs: logs,
     });
   }
 
