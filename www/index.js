@@ -25,8 +25,6 @@ class ChatEventHandler extends RMIClient.EventHandler {
   }
 }
 
-const eventHandler = new ChatEventHandler();
-
 const res = RMIClient.connect(io, '');
 
 res.onConnected = (rmi) => {
